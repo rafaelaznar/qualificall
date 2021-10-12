@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import net.ausiasmarch.sepivos.UserBean;
 
 public class session extends HttpServlet {
 
@@ -49,24 +48,15 @@ public class session extends HttpServlet {
         return body;
     }
 
-    private void doCORS(HttpServletRequest oRequest, HttpServletResponse oResponse) {
-        System.out.println("Request: " + oRequest.getRequestURI());
-        System.out.println("FROM IP: " + oRequest.getHeader("x-forwarded-for"));
-        oResponse.setContentType("application/json;charset=UTF-8");
-       
-    }
-
     @Override
     protected void doOptions(HttpServletRequest request, HttpServletResponse response)
-           throws ServletException, IOException {
-        doCORS(request, response);
+           throws ServletException, IOException {        
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-           throws ServletException, IOException {
-        System.out.println("goGET Request: " + request.getRequestURI());
-        doCORS(request, response);
+           throws ServletException, IOException {        
+        response.setContentType("application/json;charset=UTF-8");
         Gson oGson = new Gson();
         try ( PrintWriter out = response.getWriter()) {
             String op = request.getParameter("op");
@@ -123,7 +113,7 @@ public class session extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
            throws ServletException, IOException {
-        doCORS(request, response);
+        response.setContentType("application/json;charset=UTF-8");
         Gson oGson = new Gson();
         try ( PrintWriter out = response.getWriter()) {
             HttpSession oSession = request.getSession();
@@ -157,7 +147,7 @@ public class session extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response)
            throws ServletException, IOException {
-        doCORS(request, response);
+        response.setContentType("application/json;charset=UTF-8");
         Gson oGson = new Gson();
         try ( PrintWriter out = response.getWriter()) {
             HttpSession oSession = request.getSession();
