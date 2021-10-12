@@ -1,2 +1,2 @@
-# pusaldo
-Autenticación. Manejo de sesiones. Métodos GET, POST DELETE.Mejora de CORS. Basado en miriase.
+# sepivos
+Servidor pusaldo que implementa CORS mediante un filtro
