@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class session extends HttpServlet {
+public class Session extends HttpServlet {
 
     private static String getBody(HttpServletRequest request) throws IOException {
         //https://stackoverflow.com/questions/14525982/getting-request-payload-from-post-request-in-java-servlet

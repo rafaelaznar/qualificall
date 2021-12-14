@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <display-name>sepivos</display-name>
     <filter>
-        <filter-name>CorsFilter</filter-name>
-        <filter-class>net.ausiasmarch.sepivos.CORSFilter</filter-class>
+        <filter-name>CORSFilter</filter-name>
+        <filter-class>net.ausiasmarch.sepivos.CorsFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>CorsFilter</filter-name>
+        <filter-name>CORSFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     <servlet>
         <servlet-name>session</servlet-name>
-        <servlet-class>net.ausiasmarch.sepivos.session</servlet-class>
+        <servlet-class>net.ausiasmarch.sepivos.Session</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>session</servlet-name>
         <url-pattern>/session</url-pattern>
-    </servlet-mapping>    
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
